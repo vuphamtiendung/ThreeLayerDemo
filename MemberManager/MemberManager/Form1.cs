@@ -18,6 +18,7 @@ namespace MemberManager
         public btnAdd()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,17 +47,23 @@ namespace MemberManager
 
         private void dgv_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvMember.SelectedRows[0];
-            txtFullName.Text = row.Cells[1].Value.ToString();
-            txtNumberPhone.Text = row.Cells[2].Value.ToString();
-            txtEmail.Text = row.Cells[3].Value.ToString();
-
+            try
+            {
+                DataGridViewRow row = dgvMember.SelectedRows[0];
+                txtFullName.Text = row.Cells[1].Value.ToString();
+                txtNumberPhone.Text = row.Cells[2].Value.ToString();
+                txtEmail.Text = row.Cells[3].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Đã có lõi xảy ra, chi tiết: " + ex.Message);
+            }
         }
 
       
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dgvMember.SelectedRows.Count > 0)
+            try
             {
                 DataGridViewRow row = dgvMember.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells[1].Value.ToString());
@@ -71,10 +78,15 @@ namespace MemberManager
                     MessageBox.Show("Xoá thành công");
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Hãy chọn thành viên muốn xoá.");
+                MessageBox.Show("Đã có lỗi xảy ra! chi tiết: " + ex.Message);
             }
+        }
+
+        private void btnAdd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

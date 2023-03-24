@@ -9,6 +9,6 @@ namespace DAL_Manager
 {
     public class DBConnect
     {
-        public SqlConnection _conn = new SqlConnection("Server=Admin; Database=MemberManager; Integrated sercurity = true");
+        public SqlConnection _conn = new SqlConnection("Server=Admin; Database=MemberManager; integrated security = true");
     }
 }

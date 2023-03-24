@@ -16,7 +16,7 @@ namespace DTO_Manager
         public int MemberId { get { return _memberId; } set { _memberId = value; } }
         public string MemberName { get { return _memberName; } set { _memberName = value; } }
         public int MemberPhone { get { return _memberPhone;} set { _memberPhone = value; } }
-        public string MemberEmail { get { return _memberName; } set { _memberEmail = value; } }
+        public string MemberEmail { get { return _memberEmail; } set { _memberEmail = value; } }
 
 
         public DTO_Member() { }

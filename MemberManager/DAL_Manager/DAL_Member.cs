@@ -25,7 +25,7 @@ namespace DAL_Manager
             try
             {
                 _conn.Open();
-                string query = string.Format($"Insert Into THANHVIEN (TV_NAME, TV_PHONE, TV_EMAIL) Values ('{member.MemberName}', '{member.MemberPhone}', '{member.MemberEmail}')");
+                string query = string.Format($"Insert Into THANHVIEN (TV_NAME, TV_PHONE, TV_EMAIL) Values (N'{member.MemberName}', N'{member.MemberPhone}', N'{member.MemberEmail}')");
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 if (cmd.ExecuteNonQuery() > 0) return true;
             }

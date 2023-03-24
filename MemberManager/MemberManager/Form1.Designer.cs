@@ -151,7 +151,6 @@
             // 
             this.dgvMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMember.Enabled = false;
             this.dgvMember.Location = new System.Drawing.Point(9, 19);
             this.dgvMember.Name = "dgvMember";
             this.dgvMember.Size = new System.Drawing.Size(761, 180);
@@ -170,6 +169,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "btnAdd";
             this.Text = "Member Manamger";
+            this.Load += new System.EventHandler(this.btnAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grbMember.ResumeLayout(false);
