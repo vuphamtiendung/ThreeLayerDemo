@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_Manager\BUS_Manager.csproj">
+      <Project>{33847212-c17d-4d99-8a16-bfd4ddd6e570}</Project>
+      <Name>BUS_Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_Manager\DTO_Manager.csproj">
+      <Project>{4a875880-33af-4ea9-86ac-e3d851b1fbb3}</Project>
+      <Name>DTO_Manager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
