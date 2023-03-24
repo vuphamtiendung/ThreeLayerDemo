@@ -20,11 +20,6 @@ namespace MemberManager
             InitializeComponent();
         }
 
-        private void grbMember_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string fullName = txtFullName.Text;
@@ -47,7 +42,39 @@ namespace MemberManager
             {
                 MessageBox.Show("Cần nhập đầy đủ thông tin");
             }
-            
+        }
+
+        private void dgv_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvMember.SelectedRows[0];
+            txtFullName.Text = row.Cells[1].Value.ToString();
+            txtNumberPhone.Text = row.Cells[2].Value.ToString();
+            txtEmail.Text = row.Cells[3].Value.ToString();
+
+        }
+
+      
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(dgvMember.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvMember.SelectedRows[0];
+                int id = Convert.ToInt32(row.Cells[1].Value.ToString());
+
+                if (busMember.DeleteMember(id))
+                {
+                    MessageBox.Show("Xoá thành công");
+                    dgvMember.DataSource = busMember.getDataTable();
+                }
+                else
+                {
+                    MessageBox.Show("Xoá thành công");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn thành viên muốn xoá.");
+            }
         }
     }
 }

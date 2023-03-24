@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtNumberPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNumberPhone = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -60,23 +60,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin thành viên";
             // 
-            // label1
+            // txtEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Họ tên:";
+            this.txtEmail.Location = new System.Drawing.Point(99, 76);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(199, 20);
+            this.txtEmail.TabIndex = 5;
             // 
-            // label2
+            // txtNumberPhone
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số điện thoại:";
+            this.txtNumberPhone.Location = new System.Drawing.Point(99, 50);
+            this.txtNumberPhone.Name = "txtNumberPhone";
+            this.txtNumberPhone.Size = new System.Drawing.Size(199, 20);
+            this.txtNumberPhone.TabIndex = 4;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(99, 24);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(199, 20);
+            this.txtFullName.TabIndex = 3;
             // 
             // label3
             // 
@@ -87,26 +90,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Email:";
             // 
-            // txtFullName
+            // label2
             // 
-            this.txtFullName.Location = new System.Drawing.Point(99, 24);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(199, 20);
-            this.txtFullName.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Số điện thoại:";
             // 
-            // txtNumberPhone
+            // label1
             // 
-            this.txtNumberPhone.Location = new System.Drawing.Point(99, 50);
-            this.txtNumberPhone.Name = "txtNumberPhone";
-            this.txtNumberPhone.Size = new System.Drawing.Size(199, 20);
-            this.txtNumberPhone.TabIndex = 4;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(99, 76);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(199, 20);
-            this.txtEmail.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Họ tên:";
             // 
             // button1
             // 
@@ -126,6 +126,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -145,16 +146,17 @@
             this.grbMember.TabIndex = 4;
             this.grbMember.TabStop = false;
             this.grbMember.Text = "Dữ liệu thành viên";
-            this.grbMember.Enter += new System.EventHandler(this.grbMember_Enter);
             // 
             // dgvMember
             // 
             this.dgvMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMember.Enabled = false;
             this.dgvMember.Location = new System.Drawing.Point(9, 19);
             this.dgvMember.Name = "dgvMember";
             this.dgvMember.Size = new System.Drawing.Size(761, 180);
             this.dgvMember.TabIndex = 0;
+            this.dgvMember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Click);
             // 
             // btnAdd
             // 
